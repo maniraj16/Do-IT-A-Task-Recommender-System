@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 32px;
+}
+
+form {
+  width: 30%;
+  margin: 4% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  height: 36px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  max-width: 30%;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Login</h1>
+  <form>
+    <label for="username">Username:</label><br>
+    
+    <input type="text" id="username" name="username" placeholder="example@gmail.com"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" placeholder="password"><br><br>
+    <button type="button" onclick="checkLogin()">Submit</button>
+  </form> 
+  
+  <script>
+    function checkLogin() {
+      // Get the entered username and password
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      
+      // Set the correct username and password
+      var correctUsername = "admin@gmail.com";
+      var correctPassword = "password123";
+      
+      // Check if the entered values match the correct values
+      if (username == correctUsername && password == correctPassword) {
+        // If they match, redirect the user to the homepage
+        window.location.replace("http://127.0.0.1:5500/index.html");
+      } else {
+        // If they don't match, display an error message
+        alert("Incorrect username or password. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
